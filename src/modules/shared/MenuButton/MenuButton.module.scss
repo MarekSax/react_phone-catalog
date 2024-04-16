@@ -24,7 +24,9 @@
     &::after {
       content: attr(data-items);
       box-sizing: border-box;
+
       @include text(9px, 400, $clr-white, 14px);
+      
       text-align: center;
       position: absolute;
       top: 0;

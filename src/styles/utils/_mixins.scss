@@ -12,6 +12,7 @@
   font-size: $size;
   font-weight: $weight;
   color: $color;
+  
   @if $line {
     line-height: $line;
   }

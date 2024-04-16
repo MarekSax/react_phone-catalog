@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { Paths } from './types/Paths';
 import { HomePage } from './modules/HomePage';
 import { PhonesPage } from './modules/PhonesPage';
 import { TabletsPage } from './modules/TabletsPage';
@@ -8,23 +9,23 @@ import { AccessoriesPage } from './modules/AccessoriesPage';
 
 const router = createHashRouter([
   {
-    path: '/',
+    path: Paths.home,
     element: <App />,
     children: [
       {
-        path: '/',
+        path: Paths.home,
         element: <HomePage />,
       },
       {
-        path: 'phones',
+        path: Paths.phones,
         element: <PhonesPage />,
       },
       {
-        path: 'tablets',
+        path: Paths.tablets,
         element: <TabletsPage />,
       },
       {
-        path: 'accessories',
+        path: Paths.accessories,
         element: <AccessoriesPage />,
       },
     ],

@@ -1,0 +1,80 @@
+@use '../../../styles/utils/' as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  box-shadow: -1px 0 0 0 $clr-elements;
+
+  &Inner {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.hamburger {
+  --bar-width: 14px;
+  --bar-height: 1.5px;
+  --hamburger-gap: 2px;
+  --animation-timing: 200ms ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  z-index: 2;
+  cursor: pointer;
+
+  &::before,
+  &::after,
+  &Mid {
+    content: '';
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: $clr-white;
+    border-radius: 9999px;
+    transform-origin: right center;
+    transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing);
+  }
+
+  &:has(input:checked) {
+    width: 9.33px;
+    height: 9.33px;
+  }
+
+  &:has(input:checked)::before {
+    rotate: -45deg;
+    width: 13.2px;
+    translate: 0 -1.5px;
+  }
+
+  &:has(input:checked)::after {
+    rotate: 45deg;
+    width: 13.2px;
+    translate: 0 1px;
+  }
+
+  &Mid {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+
+    &:checked {
+      opacity: 0;
+      width: 0;
+    }
+  }
+}

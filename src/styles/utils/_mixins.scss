@@ -1,0 +1,19 @@
+@use './variables' as *;
+
+@mixin mq($key) {
+  @if map-has-key($breakpoints, $key) {
+    @media (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  }
+}
+
+@mixin text($size, $weight, $color, $line: null ) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  @if $line {
+    line-height: $line;
+  }
+  @content;
+}

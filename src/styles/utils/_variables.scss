@@ -1,0 +1,38 @@
+$clr-secondary: #75767F;
+$clr-icons: #4A4D58;
+$clr-elements: #3B3E4A;
+$clr-surface2: #323542;
+$clr-surface1: #161827;
+$clr-black: #0F1121;
+$clr-white: #F1F2F9;
+$clr-accent: #905BFF;
+$clr-green: #27AE60;
+$clr-red: #EB5757;
+
+@font-face {
+  font-family: 'Mont';
+  src: url(../../../public/fonts/Mont-Regular.otf);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url(../../../public/fonts/Mont-SemiBold.otf);
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url(../../../public/fonts/Mont-Bold.otf);
+  font-style: normal;
+  font-weight: 800;
+}
+
+$breakpoints: (
+  tablet: 640px,
+  desktop: 1200px,
+  desktop-lg: 1440px,
+);
+

@@ -1,0 +1,40 @@
+@use '../../../styles/utils' as *;
+
+.container {
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  background-color: $clr-black;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-shadow: 0 1px 0 0 $clr-elements;
+
+  @include mq('desktop') {
+    height: 64px;
+  }
+}
+
+.left {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 1rem;
+
+  @include mq('desktop') {
+    gap: 1.5rem;
+  }
+}
+
+.right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}

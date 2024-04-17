@@ -3,4 +3,6 @@ export enum Paths {
   phones = '/phones',
   tablets = '/tablets',
   accessories = '/accessories',
+  cart = '/cart',
+  favorites = '/favorites',
 }

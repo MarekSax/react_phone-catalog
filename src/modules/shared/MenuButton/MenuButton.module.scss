@@ -2,14 +2,23 @@
 
 .container {
   height: 100%;
-  display: flex;
+  width: 48px;
+  display: none;
   align-items: center;
   justify-content: center;
-  padding: 10px;
   box-shadow: -1px 0 0 0 $clr-elements;
+  transition: background-color 0.15s ease-in-out;
+
+  @include mq('tablet') {
+    display: flex;
+  }
 
   @include mq('desktop') {
-    padding: 18px;
+    width: 64px;
+  }
+
+  &:hover {
+    background-color: $clr-elements;
   }
 }
 
@@ -26,7 +35,7 @@
       box-sizing: border-box;
 
       @include text(9px, 400, $clr-white, 14px);
-      
+
       text-align: center;
       position: absolute;
       top: 0;

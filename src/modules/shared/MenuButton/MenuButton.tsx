@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './MenuButton.module.scss';
 import cn from 'classnames';
 import { MenuButtonProps, MenuButtonType } from '../../../types';
-import { Link } from 'react-router-dom';
+import { CustomNavLink } from '../CustomNavLink';
 
 const buttonTypes = {
   cart: '/img/icons/cart-button.svg',
@@ -24,12 +24,12 @@ export const MenuButton = ({ type }: MenuButtonProps) => {
   };
 
   return (
-    <div className={styles.container}>
-      <Link to={type} aria-label={generateAriaLabel()}>
+    <CustomNavLink to={type} aria-label={generateAriaLabel()}>
+      <div className={styles.container}>
         <div className={classNames} data-items={itemsCount}>
           <img src={buttonTypes[type]} alt="" />
         </div>
-      </Link>
-    </div>
+      </div>
+    </CustomNavLink>
   );
 };

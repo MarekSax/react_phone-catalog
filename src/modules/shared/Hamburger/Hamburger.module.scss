@@ -8,6 +8,10 @@
   height: 48px;
   box-shadow: -1px 0 0 0 $clr-elements;
 
+  @include mq('tablet') {
+    display: none;
+  }
+
   &Inner {
     display: flex;
     width: 16px;
@@ -45,7 +49,11 @@
     background-color: $clr-white;
     border-radius: 9999px;
     transform-origin: right center;
-    transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing);
+    transition:
+      opacity var(--animation-timing),
+      width var(--animation-timing),
+      rotate var(--animation-timing),
+      translate var(--animation-timing);
   }
 
   &:has(input:checked) {

@@ -21,27 +21,3 @@
       gap: 4rem;
     }
   }
-
-.link {
-    @include text(0.75rem, 800, $clr-secondary, 11px);
-    
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    height: 100%;
-    display: flex;
-    position: relative;
-    align-items: center;
-  }
-
-.active {
-  color: $clr-white;
-
-  &::before {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: $clr-white;
-    bottom: 0;
-  }
-}

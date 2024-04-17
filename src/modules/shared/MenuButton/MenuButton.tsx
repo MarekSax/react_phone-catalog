@@ -27,7 +27,7 @@ export const MenuButton = ({ type }: MenuButtonProps) => {
     <CustomNavLink to={type} aria-label={generateAriaLabel()}>
       <div className={styles.container}>
         <div className={classNames} data-items={itemsCount}>
-          <img src={buttonTypes[type]} alt="" />
+          <img src={buttonTypes[type]} alt={type} />
         </div>
       </div>
     </CustomNavLink>

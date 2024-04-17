@@ -1,7 +1,25 @@
-@import '../../styles/utils/variables';
+@import '../../styles/utils/';
 
-.home {
-  background: $clr-black;
-  height: 100vh;
-  color: $clr-white;
+.container {
+  @include grid;
+}
+
+.title {
+  grid-column: span 4;
+
+  @include text(32px, 800, $clr-white, 41px);
+
+  letter-spacing: -0.01em;
+  margin: 24px 0;
+
+  @include mq('tablet') {
+    @include text(48px, 800, $clr-white, 56px);
+
+    grid-column: span 12;
+  }
+
+  @include mq('desktop') {
+    grid-column: span 24;
+  }
+
 }

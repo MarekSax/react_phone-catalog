@@ -12,9 +12,23 @@
   font-size: $size;
   font-weight: $weight;
   color: $color;
-  
+
   @if $line {
     line-height: $line;
   }
   @content;
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @include mq('tablet') {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @include mq('desktop') {
+    grid-template-columns: repeat(24, 32px);
+  }
 }

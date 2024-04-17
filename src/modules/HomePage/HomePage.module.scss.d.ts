@@ -1,1 +1,2 @@
-export declare const home: string;
+export declare const container: string;
+export declare const title: string;

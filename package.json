@@ -12,10 +12,12 @@
     "bulma": "^0.9.4",
     "classnames": "^2.5.1",
     "react": "^18.2.0",
+    "react-aria": "^3.32.1",
     "react-dom": "^18.2.0",
     "react-responsive": "^10.0.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "react-swipeable": "^7.0.1",
     "react-transition-group": "^4.4.5",
     "the-new-css-reset": "^1.11.2"
   },

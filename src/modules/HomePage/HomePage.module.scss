@@ -2,6 +2,8 @@
 
 .container {
   @include grid;
+
+  margin-bottom: 1.5rem;
 }
 
 .title {

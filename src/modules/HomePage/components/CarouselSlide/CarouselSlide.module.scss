@@ -1,0 +1,100 @@
+@use '../../../../styles/utils' as *;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 0.5rem;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  background-color: #000;
+}
+
+.left {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  @include mq('tablet') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0deg, 0, 13);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    justify-content: space-between;
+
+    @include mq('desktop') {
+      padding: 2rem;
+    }
+  }
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(109, 0, 255, 1) 30%,
+    rgba(154, 39, 129, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include mq('desktop') {
+    font-size: 3rem;
+  }
+}
+
+.button {
+  font-size: 0.5rem;
+  width: max-content;
+  background: transparent;
+  border: 1px solid $clr-elements;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+
+  @include mq('desktop') {
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+  }
+
+  &:hover {
+    background-color: rgba($color: #fff, $alpha: .1);
+  }
+
+  &:active {
+    background: transparent;
+  }
+}
+
+.right {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.img {
+  object-fit: scale-down;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-position: bottom;
+  z-index: -1;
+}

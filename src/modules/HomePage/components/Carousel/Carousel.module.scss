@@ -1,0 +1,179 @@
+@use '../../../../styles/utils/' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: $clr-white;
+  overflow: hidden;
+
+  @include mq('tablet') {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    margin: 1.5rem;
+  }
+
+  @include mq('desktop') {
+    grid-template-columns: repeat(24, 1fr);
+  }
+}
+
+.slides {
+  --gap: 4rem;
+
+  display: flex;
+  max-width: 100%;
+  transition: transform 1s ease-in-out;
+  gap: var(--gap);
+
+  &Container {
+    display: flex;
+    overflow: hidden;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+
+    @include mq('tablet') {
+      grid-column: 2 / -2;
+      aspect-ratio: 70 / 27;
+    }
+  }
+}
+
+.slide {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.button {
+  display: none;
+
+  @include mq('tablet') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $clr-surface2;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  &:hover {
+    background-color: $clr-icons;
+  }
+
+  &:active {
+    background-color: $clr-surface2;
+  }
+
+  &Left {
+    @include mq('tablet') {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &Right {
+    @include mq('tablet') {
+      grid-column: -2 / -1;
+    }
+  }
+}
+
+.dotsWrapper {
+  --animation-duration: 1s;
+
+  display: flex;
+  justify-content: center;
+
+  @include mq('tablet') {
+    grid-column: span 12;
+  }
+
+  @include mq('desktop') {
+    grid-column: span 24;
+  }
+}
+
+.dot {
+  display: flex;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 10px 5px;
+  cursor: pointer;
+
+  &Inside {
+    display: flex;
+    overflow: hidden;
+    width: 14px;
+    height: 4px;
+    background-color: $clr-elements;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease-in-out;
+
+    &::after {
+      content: '';
+      visibility: hidden;
+      background-color: $clr-white;
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+    }
+  }
+
+  &:hover .dotInside {
+    @include mq('desktop') {
+      outline: $clr-secondary 2px solid;
+      outline-offset: 2px;
+    }
+  }
+
+  &Active {
+    &Left::after {
+      visibility: visible;
+      transform: translateX(-100%);
+      animation: enter var(--animation-duration) ease-in-out forwards;
+    }
+
+    &Right::after {
+      visibility: visible;
+      transform: translateX(100%);
+      animation: enter var(--animation-duration) ease-in-out forwards;
+    }
+  }
+
+  &Exit {
+    &Left::after {
+      visibility: visible;
+      animation: exit-left var(--animation-duration) ease-in forwards;
+    }
+
+    &Right::after {
+      visibility: visible;
+      animation: exit-right var(--animation-duration) ease-in forwards;
+    }
+  }
+}
+
+@keyframes enter {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes exit-left {
+  70% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes exit-right {
+  80% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

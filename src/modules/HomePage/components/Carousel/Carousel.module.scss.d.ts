@@ -1,0 +1,17 @@
+export declare const button: string;
+export declare const buttonLeft: string;
+export declare const buttonRight: string;
+export declare const container: string;
+export declare const dot: string;
+export declare const dotActiveLeft: string;
+export declare const dotActiveRight: string;
+export declare const dotExitLeft: string;
+export declare const dotExitRight: string;
+export declare const dotInside: string;
+export declare const dotsWrapper: string;
+export declare const enter: string;
+export declare const exitLeft: string;
+export declare const exitRight: string;
+export declare const slide: string;
+export declare const slides: string;
+export declare const slidesContainer: string;
